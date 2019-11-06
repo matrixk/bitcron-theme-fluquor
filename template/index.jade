@@ -1,0 +1,120 @@
+html
+	head
+		block title
+			if site.configs.sub_title
+				title= site.title + ' - ' + site.configs.sub_title
+			else
+				title= site.title
+		+h.headers
+		+h.load('/template/style.scss')
+		link(href='https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,600,900|Source+Code+Pro:200&display=swap', rel='stylesheet')
+		link(rel='stylesheet', href='/template/icono.min.css')
+		link(rel='apple-touch-icon', href=site.site_avatar)
+
+	body
+		.loader
+			.loader-content
+				img(src="/template/image/snowflakes.svg")
+				span.loading-text="Loading..."
+
+		.wrapper
+			header
+				h1.site_title= site.title
+				.sp-open
+					i.icono-hamburger
+				nav.global
+					ul
+						li
+							a(href="/")="博客首页"
+								span="HOME"
+						li
+							a(href="/recent")="近期动态"
+								span="RECENT"
+						li
+							a(href="/archive")="文章归档"
+								span="ARCHIVE"
+						li
+							a(href="/about")="关于博主"
+								span="ABOUT ME"
+						li
+							a(href="/feed")="RSS订阅"
+								span="RSS FEED"
+					+posts.search_in_html(placeholder='站内搜索', base_url='/search')
+
+			article
+				block main
+					section.sc-main
+						.sc-visual
+							.bg-img
+						if site.configs.sub_title
+							.sc-descrption
+								h1= site.configs.sub_title
+
+		.sp-menu
+			nav.sp-global
+				.sp-close
+					i.icono-cross
+				ul
+					li
+						a(href="/")="博客首页"
+							span="HOME"
+					li
+						a(href="/recent")="近期动态"
+							span="RECENT"
+					li
+						a(href="/archive")="文章归档"
+							span="ARCHIVE"
+					li
+						a(href="/about")="关于博主"
+							span="ABOUT ME"
+					li
+						a(href="/feed")="RSS订阅"
+							span="RSS FEED"
+		footer
+				.ft-author
+					img(src=site.avatar, alt=site.configs.admin_name)
+					.description
+						p
+							span= "请在这里填写"
+							span.special="博主简介"
+						p
+							span= '本站共有'
+							span= '%s篇文章，' %(d.get_data(types='post', return_count=true, with_page=false))
+							span= '%s字。' %('{0:,}'.format(site.text_words))
+				.ft-copyright
+					.ft-copyright-line
+						a(href="https://mrx.moe/zi-zhi/bitcron-theme-fluquor")= "Theme Fluquor"
+						if site.configs.admin_name
+							span="&copy; " + site.configs.admin_name +" "+ site.now.year
+						else
+							span="&copy; " + site.title +" "+ site.now.year
+						+site.socials
+					.ft-copyright-line
+						a(href="https://bitcron.com/")= "Powered by Bitcron"
+
+
+		+h.back_to_top(label='↾')
+
+
+		script.
+			$(document).ready(function(){
+			$(".icono-hamburger").click(function(){
+			$(".sp-menu").fadeToggle(500);
+			$(".wrapper").fadeToggle(500);
+			$("footer").fadeToggle(500);
+			});
+			});
+\
+			$(document).ready(function(){
+			$(".icono-cross").click(function(){
+			$(".sp-menu").fadeToggle(500);
+			$(".wrapper").fadeToggle(500);
+			$("footer").fadeToggle(500);
+			});
+			});
+
+
+		script.
+			$(window).load(function(){
+			$(".loader").fadeOut("slow");
+			});
