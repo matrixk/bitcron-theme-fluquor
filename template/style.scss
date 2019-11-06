@@ -397,11 +397,6 @@ article {
             }
         }
     }
-    .md_block {
-        span.md_line {
-            text-indent: 2.2em!important;
-        }
-    }
     a {
         color: unset;
         text-decoration: none;
@@ -765,7 +760,7 @@ article {
     border-top: #cecece 1px dashed;
     p {
         margin: 0;
-        text-indent: 2em;
+        text-indent: 2.2em;
     }
 }
 
