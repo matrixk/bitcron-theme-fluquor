@@ -249,7 +249,7 @@ footer {
             padding-left: 2em;
             width: calc(100% - 210px + 20px - 20px);
             p {
-                margin: 0.5em;
+                letter-spacing: 0.1em;
                 .special {
                     border-bottom: 1px dotted #E7695D;
                 }
@@ -1225,10 +1225,16 @@ article {
                 mix-blend-mode: color-burn;
                 line-height: 0;
                 overflow: hidden;
-                .bg-img {
+               -webkit-filter: grayscale(0);
+                       filter: grayscale(0);
+               &:hover {
+                    -webkit-filter: grayscale(1);
+                            filter: grayscale(1);
+               }
+               .bg-img {
                     height: 100vh;
                     mix-blend-mode: overlay;
-                }
+               }
             }
         }
     }
