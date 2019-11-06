@@ -83,13 +83,10 @@ html
 							span= '%s字。' %('{0:,}'.format(site.text_words))
 				.ft-copyright
 					.ft-copyright-line
-						a(href="https://mrx.moe/zi-zhi/bitcron-theme-fluquor")= "Theme Fluquor"
-						if site.configs.admin_name
-							span="&copy; " + site.configs.admin_name +" "+ site.now.year
-						else
-							span="&copy; " + site.title +" "+ site.now.year
+						span="&copy; " + site.configs.admin_name +" "+ site.now.year
 						+site.socials
 					.ft-copyright-line
+						a(href="https://mrx.moe/zi-zhi/bitcron-theme-fluquor")= "Theme Fluquor"
 						a(href="https://bitcron.com/")= "Powered by Bitcron"
 
 
