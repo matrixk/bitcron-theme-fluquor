@@ -427,7 +427,7 @@ article {
             }
             tbody {
                 tr {
-                    border-bottom: 1px dotted #999;
+                    border-top: 1px dotted #999;
                     td {
                         padding: 0.5em;
                     }
@@ -724,7 +724,7 @@ article {
 .warning {
     font-size: 0.8em;
     line-height: 1.8;
-    padding: 1em 0;
+    padding: 1em 0 0.7em 0;
     border-top: #000000 1px dotted;
     border-bottom: #000000 1px dotted;
     .md_line {
