@@ -369,7 +369,13 @@ article {
         text-align: right;
         font-size: 1.3em;
         &:first-child {
-                margin: 0 auto 4em auto;
+            margin: 0 auto 3em auto;
+            hr {
+                display: none;
+            }
+        }
+        hr {
+            display: none;
         }
         h1 {
             margin: 0 0 0 auto;
@@ -1273,6 +1279,9 @@ article {
             font-size: 1em;
             &:first-child {
                 margin: unset;
+                hr {
+                    display: block;
+                }
             }
             h1 {
                 margin: 0 auto;
