@@ -250,6 +250,7 @@ footer {
             width: calc(100% - 210px + 20px - 20px);
             p {
                 letter-spacing: 0.1em;
+                margin: 0;
                 .special {
                     border-bottom: 1px dotted #E7695D;
                 }
@@ -1252,6 +1253,9 @@ article {
                 padding: 1em 0;
                 display: block;
                 text-align: center;
+                p {
+                    margin: 1em 0;
+                }
             }
         }
     }
