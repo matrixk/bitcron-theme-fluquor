@@ -596,7 +596,6 @@ article {
             display: block;
             text-decoration: none;
             border-bottom: unset;
-            padding-right: 0.5em;
             overflow: hidden;
             &:hover {
                 border-bottom: unset;
@@ -614,7 +613,6 @@ article {
             box-decoration-break: clone;
             text-decoration: none;
             border-bottom: 1px dotted #999;
-            padding: 0 .5em;
             position: relative;
             -webkit-transition: $transition;
             -o-transition: $transition;
@@ -732,7 +730,7 @@ article {
 .warning {
     font-size: 0.8em;
     line-height: 1.8;
-    padding: 1em 0 0.7em 0;
+    padding: 1em 0 0.5em 0;
     border-top: #000000 1px dotted;
     border-bottom: #000000 1px dotted;
     .md_line {
@@ -1216,7 +1214,7 @@ article {
                 position: absolute;
                 margin: 0;
                 top: unset;
-                bottom: 5em;
+                bottom: 25vh;
                 h1 {
                     max-width: 80%;
                     margin: 0 auto;
@@ -1246,24 +1244,10 @@ article {
             }
         }
     }
-
     footer {
-        padding: 3em 1em;
+        padding: 1em;
         .ft-author {
-            img {
-                max-width: 150px;
-                display: block;
-                margin: 0 auto;
-            }
-            .description {
-                width: 100%;
-                padding: 1em 0;
-                display: block;
-                text-align: center;
-                p {
-                    margin: 1em 0;
-                }
-            }
+            display: none;
         }
     }
     #atc-inner {
@@ -1294,13 +1278,6 @@ article {
         }
     }
 
-    footer {
-        .ft-author {
-        img {
-            display: none;
-        }
-        }
-    }
     .wrapper, footer {
         min-width: inherit;
     }

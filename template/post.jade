@@ -34,13 +34,13 @@ else
 			if post.metadata.indent in ['yes', 'cancel','0', True]
 				+h.load("/template/indent.scss")
 			post.content
-			#end
-				if post.metadata.tbc in ['yes', 'cancel','0', True]
-					span 未完待续
-				else
-					span End.
-	
+		
 			if post.metadata.status not in ['page', 'Page']
+				#end
+					if post.metadata.tbc in ['yes', 'cancel','0', True]
+						span 未完待续
+					else
+						span End.
 				#pre-next
 					if posts.previous_one
 						.pre
